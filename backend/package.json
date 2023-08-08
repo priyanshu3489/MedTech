@@ -1,0 +1,27 @@
+{
+  "name": "medtech",
+  "version": "1.0.0",
+  "description": "Health Monitoring System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "priyanshu3489"
+  },
+  "keywords": [
+    "health",
+    "hospital",
+    "doctor",
+    "patient",
+    "appointment",
+    "dmr"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.4.2"
+  }
+}
