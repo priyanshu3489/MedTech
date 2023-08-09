@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 const JWT_SECRET = 'priyanshu';
 
 
-// route1: Create a patient using: POST "/api/auth/createpatient". No login required
+// route1: Create a patient using: POST "/api/authpatient/createpatient". No login required
 
 router.post('/createpatient', [
     body('name', 'Enter a valid name').isLength({ min: 5 }),
@@ -84,7 +84,7 @@ router.post('/createpatient', [
 
 })
 
-// route2: Authenticate a patient using: POST "/api/auth/login". No login required
+// route2: Authenticate a patient using: POST "/api/authpatient/login". No login required
 
 router.post('/login', [
     body('mobileno', 'Enter a valid mobile number'),
@@ -124,7 +124,7 @@ router.post('/login', [
 })
 
 
-// route3: Get loggedin patient details using: POST "/api/auth/patient". Login required
+// route3: Get loggedin patient details using: POST "/api/authpatient/patient". Login required
 
 router.post('/patient', fetchpatient, async (req, res) => {
 
@@ -139,4 +139,4 @@ router.post('/patient', fetchpatient, async (req, res) => {
   })
 
   
-module.exports = router
+module.exports = router;
