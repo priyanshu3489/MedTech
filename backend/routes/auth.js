@@ -11,21 +11,21 @@ const JWT_SECRET = 'priyanshu';
 
 router.post('/createpatient', [
     body('name', 'Enter a valid name').isLength({ min: 5 }),
-    // body('gender'),
-    // body('birthdate'),
-    // body('mobileno', 'Enter a valid mobile number'),
+    body('gender'),
+    body('birthdate'),
+    body('mobileno', 'Enter a valid mobile number'),
     body('password', 'Password must be atleast 5 characters').isLength({ min: 5 }),
     body('email', 'Enter a valid email').isEmail(),
-    // body('address', 'Enter permanent address'),
-    // body('city', 'Enter current city'),
-    // body('state', 'Enter current state'),
-    // body('bloodgroup'),
-    // body('weight'),
-    // body('bloodsuger'),
-    // body('bloodpressure'),
-    // body('eyespower'),
-    // body('handicap'),
-    // body('insurance'),
+    body('address', 'Enter permanent address'),
+    body('city', 'Enter current city'),
+    body('state', 'Enter current state'),
+    body('bloodgroup'),
+    body('weight'),
+    body('bloodsuger'),
+    body('bloodpressure'),
+    body('eyespower'),
+    body('handicap'),
+    body('insurance'),
 ], async (req, res) => {
 
     let success = false;
@@ -36,7 +36,7 @@ router.post('/createpatient', [
     }
     // check whether the patient with this mobile exists already
     try {
-        let patient = await Patients.findOne({ email: req.body.email });
+        let patient = await Patients.findOne({ mobileno: req.body.mobileno });
         if (patient) {
             return res.status(400).json({ success, error: 'Sorry a user with this mobile number already exists' })
         }
@@ -48,21 +48,21 @@ router.post('/createpatient', [
         //create a new patient user
         patient = await Patients.create({
             name: req.body.name,
-            // gender: req.body.gender,
-            // birthdate: req.body.birthdate,
-            // mobileno: req.body.mobileno,
+            gender: req.body.gender,
+            birthdate: req.body.birthdate,
+            mobileno: req.body.mobileno,
             password: secPass,
             email: req.body.email,
-            // address: req.body.address,
-            // city: req.body.city,
-            // state: req.body.state,
-            // bloodgroup: req.body.bloodgroup,
-            // weight: req.body.weight,
-            // bloodsuger: req.body.bloodsuger,
-            // bloodpressure: req.body.bloodpressure,
-            // naeyespowerme: req.body.eyespower,
-            // handicap: req.body.handicap,
-            // insurance: req.body.insurance,
+            address: req.body.address,
+            city: req.body.city,
+            state: req.body.state,
+            bloodgroup: req.body.bloodgroup,
+            weight: req.body.weight,
+            bloodsuger: req.body.bloodsuger,
+            bloodpressure: req.body.bloodpressure,
+            naeyespowerme: req.body.eyespower,
+            handicap: req.body.handicap,
+            insurance: req.body.insurance,
             
         });
         const data = {
