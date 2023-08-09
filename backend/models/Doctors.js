@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-// create schema for patient side server
+// create schema for doctor side server
 
 const DoctorSchema = new Schema({
     name: {
@@ -35,9 +35,9 @@ const DoctorSchema = new Schema({
         require: true,
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
-    workinghospital: {
+    workinghospitalname: {
         type: String,
-        require: true
+        require: false
     },
     city: {
         type: String,
@@ -52,7 +52,7 @@ const DoctorSchema = new Schema({
         require: true
     },
     experience: {
-        type: Number,
+        type: String,
         require: true
     },
     expertise:{

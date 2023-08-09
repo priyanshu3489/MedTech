@@ -15,7 +15,7 @@ app.use(express.json())
 
 // Available Routes
 app.use('/api/authpatient', authpatient)
-// app.use('/api/authdoctor', authdoctor)
+app.use('/api/authdoctor', authdoctor)
 
 
 app.listen(port, () => {
