@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const Patients = require('../models/Patients');
+const fetchpatient = require('../middleware/fetchpatient')
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const JWT_SECRET = 'priyanshu';
 
 
-// route1: Create a patient user using: POST "/api/auth/createpatient". No login required
+// route1: Create a patient using: POST "/api/auth/createpatient". No login required
 
 router.post('/createpatient', [
     body('name', 'Enter a valid name').isLength({ min: 5 }),
@@ -38,14 +39,14 @@ router.post('/createpatient', [
     try {
         let patient = await Patients.findOne({ mobileno: req.body.mobileno });
         if (patient) {
-            return res.status(400).json({ success, error: 'Sorry a user with this mobile number already exists' })
+            return res.status(400).json({ success, error: 'Sorry a patient with this mobile number already exists' })
         }
 
         //secure password create
         const salt = await bcrypt.genSalt(10);
         const secPass = await bcrypt.hash(req.body.password, salt)
 
-        //create a new patient user
+        //create a new patient patient
         patient = await Patients.create({
             name: req.body.name,
             gender: req.body.gender,
@@ -63,7 +64,7 @@ router.post('/createpatient', [
             naeyespowerme: req.body.eyespower,
             handicap: req.body.handicap,
             insurance: req.body.insurance,
-            
+
         });
         const data = {
             patient: {
@@ -72,7 +73,7 @@ router.post('/createpatient', [
         }
         const authtoken = jwt.sign(data, JWT_SECRET);
 
-        // res.json(user)
+        // res.json(patient)
         success = true;
         res.json({ success, authtoken })
 
@@ -83,4 +84,59 @@ router.post('/createpatient', [
 
 })
 
+// route2: Authenticate a patient using: POST "/api/auth/login". No login required
+
+router.post('/login', [
+    body('mobileno', 'Enter a valid mobile number'),
+    body('password', 'Password cannot be blank').exists(),
+], async (req, res) => {
+    let success = false;
+    //If there are errors, return sad request and the  errors
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+    const { mobileno, password } = req.body;
+    try {
+        let patient = await Patients.findOne({ mobileno });
+        if (!patient) {
+            success = false;
+            return res.status(400).json({ error: "Please try to login with correct Credentials" });
+        }
+        const passwordCompare = await bcrypt.compare(password, patient.password);
+        if (!passwordCompare) {
+            success = false;
+            return res.status(400).json({ success, error: "Please try to login with correct Credentials" });
+        }
+        const data = {
+            patient: {
+                id: patient.id
+            }
+        }
+        const authtoken = jwt.sign(data, JWT_SECRET);
+        success = true;
+        res.json({ success, authtoken })
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).send("Internal Server Error")
+    }
+
+})
+
+
+// route3: Get loggedin patient details using: POST "/api/auth/patient". Login required
+
+router.post('/patient', fetchpatient, async (req, res) => {
+
+    try {
+      patientId = req.patient.id;
+      const patient = await Patients.findById(patientId).select("-password")
+      res.send(patient)
+    } catch (error) {
+      console.log(error.message);
+      res.status(500).send("Internal Server Error")
+    }
+  })
+
+  
 module.exports = router

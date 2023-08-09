@@ -51,7 +51,7 @@ const PatientSchema = new Schema({
         type: String,
         default: 'None',
         enum: {
-            values: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB+', 'O+', 'O-'],
+            values: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB+', 'O+', 'O-', '', 'none', 'None'],
             message: 'Please enter valid blood group or "none"'
         }
     },
