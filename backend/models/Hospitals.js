@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-// create schema for doctor side server
+// create schema for hospital side server
 
 const HospitalSchema = new Schema({
     hospitalname:{

@@ -18,4 +18,4 @@ const fetchhospital = (req, res, next) => {
 
 }
 
-module.exports = fetchdoctor;
+module.exports = fetchhospital;

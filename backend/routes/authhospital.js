@@ -33,7 +33,7 @@ router.post('/createhospital', [
         const salt = await bcrypt.genSalt(10);
         const secPass = await bcrypt.hash(req.body.password, salt)
 
-        //create a new doctor
+        //create a new hospital
         hospital = await Hospitals.create({
             hospitalname: req.body.hospitalname,
 
@@ -75,7 +75,7 @@ router.post('/login', [
             success = false;
             return res.status(400).json({ error: "Please try to login with correct Credentials" });
         }
-        const passwordCompare = await bcrypt.compare(password, doctor.password);
+        const passwordCompare = await bcrypt.compare(password, hospital.password);
         if (!passwordCompare) {
             success = false;
             return res.status(400).json({ success, error: "Please try to login with correct Credentials" });
