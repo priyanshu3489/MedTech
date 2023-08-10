@@ -46,7 +46,7 @@ router.post('/createhospital', [
         hospital = await Hospitals.create({
             hospitalname: req.body.hospitalname,
             username: req.body.username,
-            password: req.body.password,
+            password: secPass,
             mobileno: req.body.mobileno,
             email: req.body.email,
             hospitaltype: req.body.hospitaltype,
