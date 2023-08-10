@@ -3,6 +3,7 @@ const express = require('express')
 const cors = require('cors')
 const authpatient = require('./routes/authpatient')
 const authdoctor = require('./routes/authdoctor')
+const authhospital = require('./routes/authhospital')
 
 connectToMongo();
 const app = express()
@@ -16,9 +17,10 @@ app.use(express.json())
 // Available Routes
 app.use('/api/authpatient', authpatient)
 app.use('/api/authdoctor', authdoctor)
+app.use('/api/authhospital', authhospital)
 
 
 app.listen(port, () => {
-  console.log(`iNotebook backend listening on port ${port}`)
+  console.log(`MedTech backend listening on port ${port}`)
 })
 

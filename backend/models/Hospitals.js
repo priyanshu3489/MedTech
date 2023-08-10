@@ -18,11 +18,15 @@ const HospitalSchema = new Schema({
     },
     mobileno:{
         type: Number,
-        require: true
+        require: true,
+        unique: true,
+        match: /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/,
     },
     email:{
         type: String,
-        require: true
+        require: true,
+        require: true,
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
     hospitaltype:{
         type: String,

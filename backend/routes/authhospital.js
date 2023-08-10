@@ -13,6 +13,15 @@ const JWT_SECRET = 'priyanshu';
 
 router.post('/createhospital', [
     body('hospitalname', 'Enter your hospital name').isLength({ min: 5 }),
+    body('username', "Enter your valid username").isLength({ min: 5 }),
+    body('password', "Enter your valid password").isLength({ min: 5 }),
+    body('mobileno'),
+    body('email').isEmail,
+    body('hospitaltype'),
+    body('locality'),
+    body('city'),
+    body('state'),
+    body('pincode').isLength({ min: 6}),
 
 ], async (req, res) => {
 
@@ -36,6 +45,15 @@ router.post('/createhospital', [
         //create a new hospital
         hospital = await Hospitals.create({
             hospitalname: req.body.hospitalname,
+            username: req.body.username,
+            password: req.body.password,
+            mobileno: req.body.mobileno,
+            email: req.body.email,
+            hospitaltype: req.body.hospitaltype,
+            locality: req.body.locality,
+            city: req.body.city,
+            state: req.body.state,
+            pincode: req.body.pincode,
 
         });
         const data = {
@@ -102,13 +120,13 @@ router.post('/hospital', fetchhospital, async (req, res) => {
 
     try {
         hospitalId = req.hospital.id;
-      const hospital = await Hospitals.findById(hospitalId).select("-password")
-      res.send(hospital)
+        const hospital = await Hospitals.findById(hospitalId).select("-password")
+        res.send(hospital)
     } catch (error) {
-      console.log(error.message);
-      res.status(500).send("Internal Server Error")
+        console.log(error.message);
+        res.status(500).send("Internal Server Error")
     }
-  })
+})
 
-  
+
 module.exports = router;
