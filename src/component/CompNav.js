@@ -1,6 +1,6 @@
 import React from 'react'
 import {Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
-import { useLocation } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 
 
 const CompNav = () => {
@@ -12,19 +12,19 @@ const CompNav = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className={`nav-link ${location.pathname === "/" ? "active" : ""}`} href="/">Home</Nav.Link>
-            <Nav.Link className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} href="/about">About</Nav.Link>
+            <NavLink className={`nav-link ${location.pathname === "/" ? "active" : ""}`} to="/">Home</NavLink>
+            <NavLink className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} to="/about">About</NavLink>
             <NavDropdown title="Products" id="collasible-nav-dropdown">
               <NavDropdown.Item to="/action/3.1">Digital Medical Report (DMR)</NavDropdown.Item>
-              <NavDropdown.Item to="/action/3.2">ppointment</NavDropdown.Item>
+              <NavDropdown.Item to="/action/3.2">Apointment</NavDropdown.Item>
               <NavDropdown.Item to="/action/3.3">Reminder</NavDropdown.Item>
               <NavDropdown.Item to="/action/3.4">Billing</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`} href="/contact">Contact Us</Nav.Link>
+            <NavLink className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`} to="/contact">Contact Us</NavLink>
           </Nav>
           <Nav>
-            <Nav.Link className={`nav-link ${location.pathname === "/login" ? "active" : ""} mx-3`}  href="/login">Login</Nav.Link>
-            <Nav.Link className={`nav-link ${location.pathname === "/signup" ? "active" : ""}`} href="/signup">SignUp</Nav.Link>
+            <NavLink className={`nav-link ${location.pathname === "/login" ? "active" : ""} mx-3`}  to="/login">Login</NavLink>
+            <NavLink className={`nav-link ${location.pathname === "/signup" ? "active" : ""}`} to="/signup">SignUp</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

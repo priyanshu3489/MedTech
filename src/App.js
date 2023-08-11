@@ -1,9 +1,11 @@
 import './App.css';
 import CompNav from './component/CompNav'
+import Home from './component/Home'
 import Footer from './component/Footer';
 import Login from './component/Login';
 import Signup from './component/Signup';
 import About from './component/About';
+import Contact from './component/Contact';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -15,6 +17,9 @@ function App() {
         <CompNav />
         <div className="container">
           <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
             <Route exact path="/about">
               <About />
             </Route>
@@ -23,6 +28,9 @@ function App() {
             </Route>
             <Route exact path="/signup">
               <Signup />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
             </Route>
           </Switch>
         </div>
