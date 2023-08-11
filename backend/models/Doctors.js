@@ -39,6 +39,7 @@ const DoctorSchema = new Schema({
         type: String,
         require: false
     },
+    //locality
     city: {
         type: String,
         require: true
