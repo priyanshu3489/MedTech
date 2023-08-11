@@ -16,12 +16,12 @@ router.post('/createhospital', [
     body('username', "Enter your valid username").isLength({ min: 5 }),
     body('password', "Enter your valid password").isLength({ min: 5 }),
     body('mobileno'),
-    body('email').isEmail,
+    body('email'),
     body('hospitaltype'),
     body('locality'),
     body('city'),
     body('state'),
-    body('pincode').isLength({ min: 6}),
+    body('pincode').isLength({ max: 6}),
 
 ], async (req, res) => {
 
