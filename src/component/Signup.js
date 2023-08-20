@@ -186,8 +186,8 @@ const Signup = () => {
         <Form.Group>
 
         </Form.Group>
-        <Button className="mx-auto col-10 col-md-8 col-lg-4" variant="primary" type="login">
-          Login
+        <Button className="mx-auto col-5 col-md-8 col-lg-2" variant="primary" type="register">
+          Submit
         </Button>
       </Form>
     </div>
