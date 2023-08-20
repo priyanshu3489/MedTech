@@ -142,7 +142,7 @@ const Signup = () => {
 
         {/* BloodGroup */}
         <Form.Group className="mb-3" controlId="ControlDropdown2">
-        <Form.Label>BloodGroup</Form.Label>
+          <Form.Label>BloodGroup</Form.Label>
           <Form.Select aria-label="Default select example">
             <option>Select Your Bloodgroup</option>
             <option value="1">A+</option>
@@ -186,6 +186,13 @@ const Signup = () => {
         <Form.Group>
 
         </Form.Group>
+
+        {/* Photo Upload */}
+        <Form.Group controlId="formFile" className="mb-3">
+          <Form.Label>Upload Your Photo</Form.Label>
+          <Form.Control type="file" />
+        </Form.Group>
+
         <Button className="mx-auto col-5 col-md-8 col-lg-2" variant="primary" type="register">
           Submit
         </Button>
