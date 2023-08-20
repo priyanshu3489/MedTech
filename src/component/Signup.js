@@ -16,8 +16,8 @@ const Signup = () => {
 
   return (
     <div className="row my-3">
-      <Form className="mx-auto ">
-        <h2 className='mx-auto '>Registration</h2>
+      <Form className="mx-auto mx-auto col-10 col-md-8 col-lg-8">
+        <h2 className='mx-auto mx-auto col-10 col-md-8 col-lg-3'>Registration</h2>
 
         {/* first name */}
         <Form.Group className="mb-3" controlId="ControlTextarea">
@@ -95,7 +95,7 @@ const Signup = () => {
         {/* city */}
         <Form.Group className="mb-3" controlId="ControlTextarea2">
           <Form.Label>City</Form.Label>
-          <Form.Control as="textarea" rows={1} />
+          <Form.Control type='text' placeholder="Enter Your City" />
         </Form.Group>
 
         {/* state */}
