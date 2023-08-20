@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Button, Form, ButtonGroup, ToggleButton  } from 'react-bootstrap';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Signup = () => {
   const [radioValue, setRadioValue] = useState('1');
@@ -11,7 +11,8 @@ const Signup = () => {
     { name: 'Other', value: '3' },
   ];
 
-  const [date, setDate] = useState();
+
+  const [selectedDate, setselectedDate] = useState(new Date());
 
   return (
     <div className="row my-3">
@@ -55,7 +56,8 @@ const Signup = () => {
         <Form.Group>
         <Form.Label>BirthDate</Form.Label>
         </Form.Group>
-        <input className='mb-3' type="date" onChange={e=>setDate(e.target.value)}/>
+        {/* <input className='mb-3' type="date" onChange={e=>setDate(e.target.value)}/> */}
+        <DatePicker className='mb-3'selected={selectedDate} onChange={(date) => setselectedDate(date)} dateFormat = "dd-MM-yyyy"/>
         
 
         {/* mobileno */}
