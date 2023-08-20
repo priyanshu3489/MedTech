@@ -11,7 +11,8 @@ const JWT_SECRET = 'priyanshu';
 // route1: Create a patient using: POST "/api/authpatient/createpatient". No login required
 
 router.post('/createpatient', [
-    body('name', 'Enter a valid name').isLength({ min: 5 }),
+    body('fname', 'Enter a valid first name').isLength({ min: 5 }),
+    body('lname', 'Enter a valid last name').isLength({ min: 5 }),
     body('gender'),
     body('birthdate'),
     body('mobileno', 'Enter a valid mobile number'),
@@ -48,7 +49,8 @@ router.post('/createpatient', [
 
         //create a new patient patient
         patient = await Patients.create({
-            name: req.body.name,
+            fname: req.body.name,
+            lname: req.body.name,
             gender: req.body.gender,
             birthdate: req.body.birthdate,
             mobileno: req.body.mobileno,

@@ -4,7 +4,11 @@ const { Schema } = mongoose;
 // create schema for patient side server
 
 const PatientSchema = new Schema({
-    name: {
+    fname: {
+        type: String,
+        require: true
+    },
+    lname: {
         type: String,
         require: true
     },
