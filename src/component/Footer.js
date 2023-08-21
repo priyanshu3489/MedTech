@@ -74,6 +74,8 @@ const Footer = () => {
                 </span>
               </i>
             </FooterLink>
+            <FooterLink style={{marginTop: "20px", }}href="#">contectus@medtech.com</FooterLink>
+            <FooterLink href="#">+91 9104333700</FooterLink>
           </Column>
         </Row>
       </Container>
