@@ -193,7 +193,7 @@ const Signup = () => {
           <Form.Control type="file" />
         </Form.Group>
 
-        <Button className="mx-auto col-5 col-md-8 col-lg-2" variant="primary" type="register">
+        <Button className="mx-auto col-5 col-md-8 col-lg-3" variant="primary" type="register" >
           Submit
         </Button>
       </Form>

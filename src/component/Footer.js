@@ -15,7 +15,7 @@ const Footer = () => {
       <h1 style={{ color: "White", 
                    textAlign: "center", 
                    marginTop: "-90px",
-                   marginBottom: "30px" }}>
+                   marginBottom: "30px", }}>
         MedTech 
         <h6>Health Monitoring System</h6>
       </h1>

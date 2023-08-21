@@ -23,7 +23,7 @@ const CompNav = () => {
             <NavLink className={`nav-link ${location.pathname === "/contact" ? "active" : ""}`} to="/contact">Contact Us</NavLink>
           </Nav>
           <Nav>
-            <NavLink className={`nav-link ${location.pathname === "/login" ? "active" : ""} mx-3`}  to="/login">Login</NavLink>
+            <NavLink className={`nav-link ${location.pathname === "/login" ? "active" : ""} `}  to="/login">Login</NavLink>
             <NavLink className={`nav-link ${location.pathname === "/signup" ? "active" : ""}`} to="/signup">SignUp</NavLink>
           </Nav>
         </Navbar.Collapse>
