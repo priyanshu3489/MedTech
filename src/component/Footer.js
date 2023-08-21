@@ -14,33 +14,35 @@ const Footer = () => {
     <Box>
       <h1 style={{ color: "White", 
                    textAlign: "center", 
-                   marginTop: "-80px" }}>
+                   marginTop: "-90px",
+                   marginBottom: "30px" }}>
         MedTech 
         <h6>Health Monitoring System</h6>
       </h1>
       
       <Container>
         <Row>
-          <Column>
-            <Heading>About Us</Heading>
-            <FooterLink href="#">Aim</FooterLink>
-            <FooterLink href="#">Vision</FooterLink>
-            <FooterLink href="#">Testimonials</FooterLink>
+           <Column>
+            <Heading>Support Team</Heading>
+            <FooterLink >Priyanshu Hirpara</FooterLink>
+            <FooterLink >Jaimin Dholakiya</FooterLink>
+            <FooterLink >Yash Gelani</FooterLink>
+            <FooterLink >Akash Kanani</FooterLink>
           </Column>
           <Column>
             <Heading>Products</Heading>
             <FooterLink href="#">Digital Medical Record</FooterLink>
             <FooterLink href="#">Online Appointment System</FooterLink>
             <FooterLink href="#">Customize Reminder</FooterLink>
+            <FooterLink href="#">E-Consultancy</FooterLink>
             <FooterLink href="#">Pharmacy</FooterLink>
             <FooterLink href="#">Meet My Doctor</FooterLink>
           </Column>
           <Column>
-            <Heading>Support Team</Heading>
-            <Footer >Priyanshu Hirpara</Footer>
-            <Footer >Jaimin Dholakiya</Footer>
-            <Footer >Yash Gelani</Footer>
-            <Footer >Akash Kanani</Footer>
+            <Heading>About Us</Heading>
+            <FooterLink href="#">Aim</FooterLink>
+            <FooterLink href="#">Vision</FooterLink>
+            <FooterLink href="#">Mission</FooterLink>
           </Column>
           <Column>
             <Heading>Follow Us</Heading>
@@ -66,7 +68,7 @@ const Footer = () => {
               </i>
             </FooterLink>
             <FooterLink href="#">
-              <i className="fab fa-linkedIn">
+              <i className="fab fa-linkedin">
                 <span style={{ marginLeft: "10px" }}>
                   LinkedIn
                 </span>
