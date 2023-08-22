@@ -14,15 +14,15 @@ const PatientSchema = new Schema({
     },
     gender: {
         type: String,
-        require: true,
+        // require: true,
         enum: {
-            values: ['male', 'female', 'other'],
+            values: ['male','Male','female','Female','other','Other'],
             message: 'Please Write Like "male", "female" and "other"'
         }
     },
     birthdate: {
         type: Date,
-        require: true
+        // require: true
     },
     mobileno: {
         type: Number,
@@ -49,7 +49,7 @@ const PatientSchema = new Schema({
     },
     state: {
         type: String,
-        require: true
+        // require: true
     },
     bloodgroup: {
         type: String,
@@ -64,21 +64,26 @@ const PatientSchema = new Schema({
     },
     bloodsuger: {
         type: Boolean,
-        require: true
+        default: false,
+        // require: true
     },
     bloodpressure: {
         type: Boolean,
-        require: true
+        default: false,
+        // require: true
     },
     eyespower: {
         type: Boolean,
-        require: true
+        default: false,
+        // require: true
     },
     handicap: {
         type: Boolean,
-        require: true
+        default: false,
+        // require: true
     },
     insurance: {
+        default: false,
         type: Boolean,
     },
 

@@ -6,6 +6,7 @@ import Login from './component/Login';
 import Signup from './component/Signup';
 import About from './component/About';
 import Contact from './component/Contact';
+import Alert from './component/Alert';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -15,6 +16,7 @@ function App() {
 
       <Router>
         <CompNav />
+        <Alert/>
         <div className="container">
           <Switch>
             <Route exact path="/">

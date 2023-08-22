@@ -49,8 +49,8 @@ router.post('/createpatient', [
 
         //create a new patient patient
         patient = await Patients.create({
-            fname: req.body.name,
-            lname: req.body.name,
+            fname: req.body.fname,
+            lname: req.body.lname,
             gender: req.body.gender,
             birthdate: req.body.birthdate,
             mobileno: req.body.mobileno,
