@@ -44,9 +44,15 @@ const Signup = (props) => {
 
   const [radioValue, setRadioValue] = useState('Male');
   const radios = [
+<<<<<<< HEAD
     { id: 'gender', name: 'gender', value: 'Male' },
     { id: 'gender', name: 'gender', value: 'Female' },
     { id: 'gender', name: 'gender', value: 'Other' },
+=======
+    { name: 'gender', value: 'Male' },
+    { name: 'gender', value: 'Female' },
+    { name: 'gender', value: 'Other' },
+>>>>>>> 3e6ab472d5cbd57024c310603742093e070ebec9
   ];
   const [selectedDate, setselectedDate] = useState(new Date());
 
