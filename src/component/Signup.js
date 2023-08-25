@@ -48,6 +48,7 @@ const Signup = (props) => {
     { id: 'gender', name: 'gender', value: 'Female' },
     { id: 'gender', name: 'gender', value: 'Other' },
     ];
+    
   const [selectedDate, setselectedDate] = useState(new Date());
 
   return (
