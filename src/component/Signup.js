@@ -44,16 +44,10 @@ const Signup = (props) => {
 
   const [radioValue, setRadioValue] = useState('Male');
   const radios = [
-<<<<<<< HEAD
     { id: 'gender', name: 'gender', value: 'Male' },
     { id: 'gender', name: 'gender', value: 'Female' },
     { id: 'gender', name: 'gender', value: 'Other' },
-=======
-    { name: 'gender', value: 'Male' },
-    { name: 'gender', value: 'Female' },
-    { name: 'gender', value: 'Other' },
->>>>>>> 3e6ab472d5cbd57024c310603742093e070ebec9
-  ];
+    ];
   const [selectedDate, setselectedDate] = useState(new Date());
 
   return (
@@ -74,11 +68,11 @@ const Signup = (props) => {
         </Form.Group>
 
         {/* Gender */}
-        {/* <Form.Group className="mb-3" >
+        <Form.Group className="mb-3" >
           <Form.Label>Gender</Form.Label>
           <Form.Control type="text" className="form-control" id="gender" name="gender" onChange={onChange}  placeholder="Enter Gender" />
-        </Form.Group> */}
-        <Form.Label>Gender</Form.Label>
+        </Form.Group>
+        {/* <Form.Label>Gender</Form.Label>
         <Form.Group className="mb-3" >
           <ButtonGroup>
             {radios.map((radio, idx) => (
@@ -96,7 +90,7 @@ const Signup = (props) => {
               </ToggleButton>
             ))}
           </ButtonGroup>
-        </Form.Group>
+        </Form.Group> */}
 
         {/* Birthdate */}
         <Form.Group>

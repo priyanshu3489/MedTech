@@ -53,8 +53,6 @@ const CompNav = () => {
         </Navbar.Collapse>
         }
 
-
-
       </Container>
     </Navbar >
   );
