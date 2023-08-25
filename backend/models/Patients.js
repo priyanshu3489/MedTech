@@ -14,7 +14,7 @@ const PatientSchema = new Schema({
     },
     gender: {
         type: String,
-        // require: true,
+        require: true,
         enum: {
             values: ['male','Male','female','Female','other','Other'],
             message: 'Please Write Like "male", "female" and "other"'
@@ -22,7 +22,7 @@ const PatientSchema = new Schema({
     },
     birthdate: {
         type: Date,
-        // require: true
+        require: true
     },
     mobileno: {
         type: Number,

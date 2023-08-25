@@ -42,11 +42,11 @@ const Signup = (props) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value })
   }
 
-  const [radioValue, setRadioValue] = useState('1');
+  const [radioValue, setRadioValue] = useState('Male');
   const radios = [
-    { name: 'Male', value: '1' },
-    { name: 'Female', value: '2' },
-    { name: 'Other', value: '3' },
+    { id: 'gender', name: 'gender', value: 'Male' },
+    { id: 'gender', name: 'gender', value: 'Female' },
+    { id: 'gender', name: 'gender', value: 'Other' },
   ];
   const [selectedDate, setselectedDate] = useState(new Date());
 
@@ -68,13 +68,12 @@ const Signup = (props) => {
         </Form.Group>
 
         {/* Gender */}
-        <Form.Group className="mb-3" >
+        {/* <Form.Group className="mb-3" >
           <Form.Label>Gender</Form.Label>
           <Form.Control type="text" className="form-control" id="gender" name="gender" onChange={onChange}  placeholder="Enter Gender" />
-        </Form.Group>
-        {/* <Form.Label>Gender</Form.Label>
+        </Form.Group> */}
+        <Form.Label>Gender</Form.Label>
         <Form.Group className="mb-3" >
-          {radioValue}
           <ButtonGroup>
             {radios.map((radio, idx) => (
               <ToggleButton
@@ -87,11 +86,11 @@ const Signup = (props) => {
                 checked={radioValue === radio.value}
                 onChange={(e) => setRadioValue(e.currentTarget.value) }
               >
-                {radio.name}
+                {radio.value}
               </ToggleButton>
             ))}
           </ButtonGroup>
-        </Form.Group> */}
+        </Form.Group>
 
         {/* Birthdate */}
         <Form.Group>

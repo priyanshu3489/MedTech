@@ -46,12 +46,12 @@ router.post('/createpatient', [
         //secure password create
         const salt = await bcrypt.genSalt(10);
         const secPass = await bcrypt.hash(req.body.password, salt)
-
+        console.log(req.body.gender)
         //create a new patient patient
         patient = await Patients.create({
             fname: req.body.fname,
             lname: req.body.lname,
-            gender: req.body.gender,
+            gender: req.body.gender.value,
             birthdate: req.body.birthdate,
             mobileno: req.body.mobileno,
             password: secPass,
