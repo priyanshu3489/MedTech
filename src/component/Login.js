@@ -23,7 +23,7 @@ const Login = (props) => {
       // save and redirect
       localStorage.setItem('token', json.authtoken);
       // props.showAlert("Logged in Successfully", "success")
-      history.push("/");
+      history.push("/dmr");
 
     }
     else {
