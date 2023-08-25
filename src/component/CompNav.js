@@ -9,7 +9,7 @@ const CompNav = () => {
   //chick on logout button
   const handleLogout = () => {
     localStorage.removeItem('token');
-    history.push('/login');
+    history.push('/');
   }
 
   let location = useLocation();
@@ -45,10 +45,9 @@ const CompNav = () => {
           <NavLink className={`nav-link ${location.pathname === "/appointment" ? "active" : ""}`} to="/appointment">Appointment</NavLink>
           <NavLink className={`nav-link ${location.pathname === "/reminder" ? "active" : ""}`} to="/reminder">Reminder</NavLink>
           <NavLink className={`nav-link ${location.pathname === "/billing" ? "active" : ""}`} to="/billing">Billing</NavLink>
-          <Nav />
           </Nav>
           <Nav>
-            <button onClick={handleLogout} className="btn btn-primary">Logout</button>
+            <NavLink onClick={handleLogout} className={`nav-link ${location.pathname === "/" ? "active" : ""}`} to="/" >Logout</NavLink>
           </Nav>
         </Navbar.Collapse>
         }
