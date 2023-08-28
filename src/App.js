@@ -20,7 +20,7 @@ function App() {
       <Router>
         <CompNav />
         <Alert />
-        <div className="container">
+        <div >
           <Switch>
             <Route exact path="/">
               <Home />
